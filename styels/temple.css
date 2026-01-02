@@ -1,0 +1,311 @@
+/* General Resets */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+/* Header & Mobile Menu */
+header {
+  background-color: rgb(79, 80, 79);
+  padding: 10px;
+  position: relative;
+}
+
+.menu {
+  background: none;
+  border: 0;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  display: block; /* Visible on mobile */
+}
+
+.menu::before { content: "☰"; }
+.menu.open::before { content: "✖"; }
+
+.navigation {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+/* When menu is open */
+.navigation.open {
+  max-height: 500px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  padding: 15px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Daily Devotional Section */
+.daily-devo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(104, 37, 37);
+  padding: 20px;
+  color: white;
+}
+
+.daily-devo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.daily-devo p {
+  color: rgb(245, 110, 110);
+  font-weight: 700;
+}
+
+.daily-devo button {
+  padding: 10px 25px;
+  margin-top: 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: rgb(155, 27, 27);
+  transition: 0.3s;
+}
+
+.daily-devo button:hover {
+  background-color: rgb(175, 63, 63);
+}
+
+/* Carousel */
+.carousel-container {
+  max-width: 600px;
+  position: relative;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.fade {
+  animation: fadeAnim 1.5s;
+}
+
+@keyframes fadeAnim {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* Study Plan */
+.study-plan-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 90%;
+  max-width: 500px;
+  background: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  margin-top: 30px;
+}
+
+
+/* Enhanced Study Plan */
+.study-plan-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px auto;
+  padding: 30px;
+  border: none;
+  border-top: 5px solid rgb(104, 37, 37);
+  width: 90%;
+  max-width: 600px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.study-plan-div h2 {
+  color: rgb(104, 37, 37);
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.date-time {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+/* Offering / Payment Section */
+.offering-section {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.offering-section p {
+  font-weight: bold;
+  margin-top: 15px;
+  color: #333;
+}
+
+.offering-section input, 
+.offering-section select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.offering-section button {
+  width: 100%;
+  padding: 15px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.offering-section button:hover {
+  background-color: #219150;
+}
+
+/* Verse of the Day */
+.verse-today {
+  margin: 40px auto;
+  padding: 40px 20px;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/verse-bg.webp');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  border-radius: 0; /* Full width feel */
+}
+
+.verse-today p:first-child {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.verse-today p:last-child {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+}
+/* Container for the Video Section */
+.video-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.video-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.video-section h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: rgb(155, 27, 27);
+  margin: 8px auto 0;
+}
+
+/* Responsive Video Wrapper */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+footer a { color: #ff6b6b; }
+
+/* Desktop View */
+@media (min-width: 600px) {
+  .menu { display: none; }
+  
+  .navigation {
+    max-height: none;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .navigation a {
+    border: none;
+    width: auto;
+  }
+}
